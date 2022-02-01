@@ -18,9 +18,10 @@ const ArticleDetails = () => {
 
   useEffect(() => {
     if (!isFetching && data) {
-      const doc = data.response.docs.filter(
-        (doc: Article) => doc._id === `nyt://article/${id}`
-      )[0];
+      const doc =
+        data.response.docs.find(
+          (doc: Article) => doc._id === `nyt://article/${id}`
+        ) || null;
       setArticle(doc);
     }
   }, [data, isFetching, id]);

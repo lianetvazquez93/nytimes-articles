@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { Article } from "../interfaces/article";
 
-const apiKey = "au3zzi1h6OTBA9Yu5k4FGQlL0rtSnitT";
+const apiKey = process.env.REACT_APP_NYT_API_KEY;
 
 export interface QueryParams {
   term: string;

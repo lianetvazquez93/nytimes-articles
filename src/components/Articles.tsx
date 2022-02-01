@@ -8,11 +8,11 @@ import { setPage } from "../features/page/pageSlice";
 
 const Articles = () => {
   const term: string = useAppSelector((state: any) => state.searchTerm.term);
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
   const location = useLocation();
   const params = new URLSearchParams(location.search);
   const page = parseInt(params.get("page") || "1");
-  const dispatch = useAppDispatch();
-  const navigate = useNavigate();
 
   const { data, isFetching } = useFetchArticlesQuery({
     page: page - 1,
