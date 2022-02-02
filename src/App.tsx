@@ -1,8 +1,8 @@
-import React from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Articles from "./components/Articles";
-import ArticleDetails from "./components/ArticleDetails";
-import Header from "./components/Header";
+import React from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import Articles from './components/Articles';
+import ArticleDetails from './components/ArticleDetails';
+import Header from './components/Header';
 
 const App: React.FC = () => {
   return (

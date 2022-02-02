@@ -1,5 +1,5 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { Article } from "../interfaces/article";
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { Article } from '../interfaces/article';
 
 const apiKey = process.env.REACT_APP_NYT_API_KEY;
 
@@ -22,9 +22,9 @@ export interface ArticlesResponse {
 }
 
 export const nytArticlesSearchApi = createApi({
-  reducerPath: "articles",
+  reducerPath: 'articles',
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://api.nytimes.com/svc/search/v2/articlesearch.json",
+    baseUrl: 'https://api.nytimes.com/svc/search/v2/articlesearch.json',
   }),
   endpoints: (builder) => ({
     fetchArticles: builder.query<ArticlesResponse, QueryParams>({

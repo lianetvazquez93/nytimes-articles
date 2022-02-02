@@ -1,16 +1,16 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import type { RootState } from "../../app/store";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import type { RootState } from '../../app/store';
 
 export interface SearchTermState {
   term: string;
 }
 
 const initialState: SearchTermState = {
-  term: "weather",
+  term: 'weather',
 };
 
 export const searchTermSlice = createSlice({
-  name: "searchTerm",
+  name: 'searchTerm',
   initialState,
   reducers: {
     setSearchTerm: (state: any, action: PayloadAction<string>) => {

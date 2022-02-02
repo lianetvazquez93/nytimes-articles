@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { DateTime } from "luxon";
-import { useParams, Link } from "react-router-dom";
-import { useAppSelector } from "../app/hooks";
-import { useFetchArticlesQuery } from "../services/nytimes-articles-search";
-import { Article } from "../interfaces/article";
+import React, { useState, useEffect } from 'react';
+import { DateTime } from 'luxon';
+import { useParams, Link } from 'react-router-dom';
+import { useAppSelector } from '../app/hooks';
+import { useFetchArticlesQuery } from '../services/nytimes-articles-search';
+import { Article } from '../interfaces/article';
 
 const ArticleDetails = () => {
   const term: string = useAppSelector((state: any) => state.searchTerm.term);
@@ -18,10 +18,7 @@ const ArticleDetails = () => {
 
   useEffect(() => {
     if (!isFetching && data) {
-      const doc =
-        data.response.docs.find(
-          (doc: Article) => doc._id === `nyt://article/${id}`
-        ) || null;
+      const doc = data.response.docs.find((doc: Article) => doc._id === `nyt://article/${id}`) || null;
       setArticle(doc);
     }
   }, [data, isFetching, id]);
@@ -33,14 +30,12 @@ const ArticleDetails = () => {
           &#60; Go to results page
         </Link>
         {!article ? (
-          ""
+          ''
         ) : (
           <div>
             <h2>{article.headline?.main}</h2>
             <p className="article-date">
-              {article.pub_date
-                ? DateTime.fromISO(article.pub_date).toFormat("dd.MM.yyyy")
-                : ""}
+              {article.pub_date ? DateTime.fromISO(article.pub_date).toFormat('dd.MM.yyyy') : ''}
             </p>
             <p>{article.abstract}</p>
             <a href={article.web_url} target="_blank" rel="noreferrer">

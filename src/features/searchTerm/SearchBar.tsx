@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useAppSelector } from "../../app/hooks";
+import React, { useState } from 'react';
+import { useAppSelector } from '../../app/hooks';
 
 interface SearchBarProps {
   onSearchTermSubmit: (term: string) => void;
@@ -19,11 +19,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearchTermSubmit }) => {
     <form onSubmit={onFormSubmit}>
       <label className="subtitle">Type search query term in here:</label>
       <div className="custom-input">
-        <input
-          type="text"
-          value={term}
-          onChange={(e) => setTerm(e.target.value)}
-        />
+        <input type="text" value={term} onChange={(e) => setTerm(e.target.value)} />
         <svg xmlns="http://www.w3.org/2000/svg" className="input-icon">
           <path
             fillRule="evenodd"

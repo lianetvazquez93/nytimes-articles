@@ -1,10 +1,10 @@
-import React from "react";
-import { useFetchArticlesQuery } from "../services/nytimes-articles-search";
-import { useAppSelector, useAppDispatch } from "../app/hooks";
-import { useLocation, Link, useNavigate } from "react-router-dom";
-import SearchBar from "../features/searchTerm/SearchBar";
-import { setSearchTerm } from "../features/searchTerm/searchTermSlice";
-import { setPage } from "../features/page/pageSlice";
+import React from 'react';
+import { useFetchArticlesQuery } from '../services/nytimes-articles-search';
+import { useAppSelector, useAppDispatch } from '../app/hooks';
+import { useLocation, Link, useNavigate } from 'react-router-dom';
+import SearchBar from '../features/searchTerm/SearchBar';
+import { setSearchTerm } from '../features/searchTerm/searchTermSlice';
+import { setPage } from '../features/page/pageSlice';
 
 const Articles = () => {
   const term: string = useAppSelector((state: any) => state.searchTerm.term);
@@ -12,7 +12,7 @@ const Articles = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const params = new URLSearchParams(location.search);
-  const page = parseInt(params.get("page") || "1");
+  const page = parseInt(params.get('page') || '1');
 
   const { data, isFetching } = useFetchArticlesQuery({
     page: page - 1,
@@ -34,7 +34,7 @@ const Articles = () => {
         <SearchBar onSearchTermSubmit={onSearchTermSubmit} />
         <p className="subtitle">Results:</p>
         {isFetching ? (
-          ""
+          ''
         ) : (
           <ul>
             {data!.response.docs.map((doc: any) => (
@@ -45,10 +45,7 @@ const Articles = () => {
           </ul>
         )}
         <div className="pager-section">
-          <Link
-            className={`page-nav ${page === 1 ? "page-nav-invisible" : ""}`}
-            to={`/articles?page=${page - 1}`}
-          >
+          <Link className={`page-nav ${page === 1 ? 'page-nav-invisible' : ''}`} to={`/articles?page=${page - 1}`}>
             &#60; Prev page
           </Link>
           <Link className="page-nav" to={`/articles?page=${page + 1}`}>

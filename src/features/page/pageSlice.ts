@@ -1,5 +1,5 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import type { RootState } from "../../app/store";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import type { RootState } from '../../app/store';
 
 export interface PageState {
   value: number;
@@ -10,7 +10,7 @@ const initialState: PageState = {
 };
 
 export const pageSlice = createSlice({
-  name: "page",
+  name: 'page',
   initialState,
   reducers: {
     setPage: (state, action: PayloadAction<number>) => {
